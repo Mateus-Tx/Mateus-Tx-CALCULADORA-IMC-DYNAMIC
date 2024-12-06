@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora - IMC</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="calculadora">
+            <div class="name">
+                <h2>Calculadora - IMC</h2>
+            </div>
+
+            <div class="dados">
+                <div class="peso">
+                    <label for="peso">Peso em Kg</label>
+                    <input type="text" name="peso" id="peso" autocomplete="off" oninput="adicionarVirgula(this)>
+
+                    <i class="fa-solid fa-weight-hanging"></i>
+                    <p>Kg</p>
+                </div>
+
+                <div class="altura">
+                    <label for="altura">Altura em metros</label>
+                    <input type="text" name="altura" id="altura" autocomplete="off" oninput="adicionarVirgula(this)>
+
+                    <i class="fa-solid fa-ruler"></i>
+                    <p>m</p>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button class="btn-limpar-imc" type="button">Limpar</button>
+                <button class="btn-calcular-imc" type="button">Calcular</button>
+            </div>
+
+            <div class="info-imc">
+                <a href="https://mundoeducacao.uol.com.br/saude-bem-estar/imc.htm">Mais informações sobre o IMC <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+        </div>
+
+        <div class="resultado hidden">
+
+            <div class="btn-sair">
+                <i class="fa-solid fa-x btn-sair"></i>
+            </div>
+
+            <div class="spans">
+                <span class="imc-valor"> 000</span>
+            </div>
+
+            <div class="descricao">
+                <p>Lorem ipsum dolor sit amet consectetu</p>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+
+</html>
