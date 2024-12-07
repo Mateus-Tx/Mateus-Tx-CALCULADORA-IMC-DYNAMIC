@@ -15,6 +15,24 @@ btnCalcular.addEventListener('click', () => {
     variacoesDeIMC();
 });
 
+
+altura.addEventListener('input', () => {
+    altura.value = formatarAltura(altura.value);
+});
+
+function formatarAltura(valor) {
+    valor = valor.replace(/[^0-9,]/g, '');
+
+    valor = valor.replace('.', ',');
+
+    if (valor.length > 1 && !valor.includes('.')) {
+        valor = valor.slice(0, 1) + '.' + valor.slice(1);
+    }
+
+    return valor;
+}
+
+
 btnLimpar.addEventListener('click', () => {
     peso.value = '';
     altura.value = '';
@@ -38,32 +56,32 @@ function calcularIMC() {
 function variacoesDeIMC() {
     let imc = calcularIMC(); 
     if (imc < 18.5) {
-        descricaoImc.textContent = 'Você está abaixo do peso ideal';
+        descricaoImc.innerHTML = 'Você está abaixo do peso ideal';
         imcValor.classList.add('baixo'); 
         descricaoImc.classList.add('baixo'); 
     }
     else if (imc >= 18.5 && imc < 24.9) {
-        descricaoImc.textContent = 'Seu peso está na faixa saudável';
+        descricaoImc.innerHTML = 'Seu peso está na faixa saudável';
         imcValor.classList.add('saudavel'); 
         descricaoImc.classList.add('saudavel'); 
     }
     else if (imc >= 25 && imc < 29.9) {
-        descricaoImc.textContent = 'Você está acima do peso ideal';
+        descricaoImc.innerHTML = 'Você está acima do peso ideal';
         imcValor.classList.add('acima'); 
         descricaoImc.classList.add('acima'); 
     }
     else if (imc >= 30 && imc < 34.9) {
-        descricaoImc.textContent = 'Seu peso indica Obesidade Grau I (Leve)';
+        descricaoImc.innerHTML = 'Seu peso indica Obesidade Grau I (Leve)';
         imcValor.classList.add('obesidade1'); 
         descricaoImc.classList.add('obesidade1'); 
     }
     else if (imc >= 35 && imc < 39.9) {
-        descricaoImc.textContent = 'Seu peso indica Obesidade Grau II (Moderada)';
+        descricaoImc.innerHTML = 'Seu peso indica Obesidade Grau II (Moderada)';
         imcValor.classList.add('obesidade2'); 
         descricaoImc.classList.add('obesidade2'); 
     }
     else if (imc >= 40) {
-        descricaoImc.textContent = 'Seu peso indica Obesidade Grau III (Grave)';
+        descricaoImc.innerHTML = 'Seu peso indica Obesidade Grau III (Grave)';
         imcValor.classList.add('obesidade3'); 
         descricaoImc.classList.add('obesidade3'); 
     }
@@ -92,5 +110,7 @@ function ativarContainerResultado() {
 botaoSair.addEventListener('click', () => {
     containerResultado.classList.add('hidden');
 });
+
+
 
 
